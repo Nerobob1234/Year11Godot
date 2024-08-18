@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://dh76f7i6oqo81"]
+
+[ext_resource type="Texture2D" uid="uid://c8b2uqdnodwqo" path="res://Super Grotto Escape Files/Super Grotto Escape Files/Assets/Characters/Player/sprites/Player-idle/player-idle1.png" id="1_10jhr"]
+[ext_resource type="Script" path="res://player.gd" id="1_vwkn2"]
+[ext_resource type="Texture2D" uid="uid://wvhcni2dtp8o" path="res://Super Grotto Escape Files/Super Grotto Escape Files/Assets/Characters/Player/sprites/Player-idle/player-idle2.png" id="2_3rh22"]
+[ext_resource type="Texture2D" uid="uid://llcv3qmyshba" path="res://Super Grotto Escape Files/Super Grotto Escape Files/Assets/Characters/Player/sprites/Player-idle/player-idle3.png" id="3_l558r"]
+[ext_resource type="Texture2D" uid="uid://cqoq0cwwyxibp" path="res://Super Grotto Escape Files/Super Grotto Escape Files/Assets/Characters/Player/sprites/Player-idle/player-idle4.png" id="4_8cvsx"]
+[ext_resource type="Texture2D" uid="uid://drpfagnjpurwh" path="res://Super Grotto Escape Files/Super Grotto Escape Files/Assets/Characters/Player/sprites/Player-idle/player-idle5.png" id="5_f832o"]
+[ext_resource type="Texture2D" uid="uid://dgel4ltmv3cra" path="res://Super Grotto Escape Files/Super Grotto Escape Files/Assets/Characters/Player/sprites/Player-idle/player-idle6.png" id="6_cx8ak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ous11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_10jhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3rh22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l558r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8cvsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f832o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cx8ak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ft18q"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vwkn2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_ous11")
+animation = &"idle"
+autoplay = "idle"
+frame = 3
+frame_progress = 0.197861
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_ft18q")
